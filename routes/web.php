@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\PatientController;
 
 Route::get('/doctor', [DoctorController::class, 'index'])->name('doctor.index');
 Route::get('/doctor/create', [DoctorController::class, 'create'])->name('doctor.create');
@@ -11,6 +12,14 @@ Route::get('/doctor/edit{doctor}', [DoctorController::class, 'edit'])->name('doc
 Route::put('/doctor/update{doctor}', [DoctorController::class, 'update'])->name('doctor.update');
 Route::get('/doctor/show{doctor}', [DoctorController::class,'show'])->name('doctor.show');
 Route::delete('/doctor/destroy{doctor}', [DoctorController::class, 'destroy'])->name('doctor.destroy');
+
+Route::get('/patient', [PatientController::class, 'index'])->name('patient.index');
+Route::get('/patient/create', [PatientController::class, 'create'])->name('patient.create');
+Route::post('/patient/store', [PatientController::class, 'store'])->name('patient.store');
+Route::get('/patient/edit{patient}', [PatientController::class, 'edit'])->name('patient.edit');
+Route::put('/patient/update{patient}', [PatientController::class, 'update'])->name('patient.update');
+Route::get('/patient/show{patient}', [PatientController::class,'show'])->name('patient.show');
+Route::delete('/patient/destroy{patient}', [PatientController::class, 'destroy'])->name('patient.destroy');
 
 Route::get('/', function () {
     return view('welcome');
