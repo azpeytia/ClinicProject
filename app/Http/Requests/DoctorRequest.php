@@ -22,8 +22,8 @@ class DoctorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required','string','max:5'],
-            'medical_license' => ['required','string','max:5'],
+            'name' => ['required','string','max:45'],
+            'medical_license' => ['required','string','max:25'],
             'phone_number' => ['required','string','max:15'],
         ];
     }

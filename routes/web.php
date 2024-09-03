@@ -13,8 +13,8 @@ Route::get('/doctor/show{doctor}', [DoctorController::class,'show'])->name('doct
 Route::delete('/doctor/destroy{doctor}', [DoctorController::class, 'destroy'])->name('doctor.destroy');
 
 Route::get('/', function () {
-    // return view('welcome');
-    return view('index');
+    return view('welcome');
+    // return view('index');
 });
 
 Route::get('/dashboard', function () {
